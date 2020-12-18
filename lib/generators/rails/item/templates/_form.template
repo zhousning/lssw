@@ -1,0 +1,35 @@
+.container-fluid
+  .row.justify-content-sm-center
+    .col-sm-6
+      = form_for @<%= @mu %> do |f|
+        - if @<%= @mu %>.errors.any?
+          #error_explanation
+            %h2= "#{pluralize(@<%= @mu %>.errors.count, "error")} prohibited this buyer from being saved:"
+            %ul
+              - @<%= @mu %>.errors.full_messages.each do |msg|
+                %li= msg
+      <% @attrs.each_with_index do |attr, index| %>
+        .form-group.row
+          = f.label Setting.<%= @mpu %>.<%= attr %>, :class => "col-sm-3 col-form-label"
+          .col-sm-9
+          <% if options[:tag][index] == 'text' %>  = f.text_field :<%= attr %>, :class => "form-control"
+          <% elsif options[:tag][index] == 'textarea' %>  = f.text_area :<%= attr %>, :class => "form-control", :rows => "20"
+          <% elsif options[:tag][index] == 'number' %>  = f.number_field :<%= attr %>, :class => "form-control"
+          <% elsif options[:tag][index] == 'date' %>  = f.date_field :<%= attr %>, :class => "form-control"
+          <% elsif options[:tag][index] == 'password' %>  = f.password_field :<%= attr %>, :class => "form-control"
+          <% elsif options[:tag][index] == 'phone' %>  = f.phone_field :<%= attr %>, :class => "form-control"
+          <% elsif options[:tag][index] == 'email' %>  = f.email_field :<%= attr %>, :class => "form-control"<% end %><% end %>
+      <% if @enclosure %>
+        .form-group.row
+          = f.label "主图", :class => "col-sm-3 control-label"
+          .col-sm-9
+            = f.fields_for :enclosures do |enclosure|
+              = render 'enclosure_fields', f: enclosure
+            .links
+              = link_to_add_association "添加文件", f, :enclosures, :class => "btn btn-success"
+      <% end %>
+        .form-group.row
+          .col-sm-3.offset-sm-2
+            = f.submit '保存', :class => "btn btn-success"
+          .col-sm-3.offset-sm-1
+            = link_to '返回', <%= @mpu %>_path, :class => "btn btn-danger"

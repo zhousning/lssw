@@ -1,0 +1,23 @@
+%nav.col-md-2.d-none.d-md-block.sidebar.shadow
+  .sidebar-sticky.text-center
+    = link_to controls_path, :class => "navbar-brand bg-transparent shadow-none" do
+      = image_tag "logo.svg", :width => "100px"
+    #accordionExample.accordion
+      - if current_user.has_role?(Setting.roles.labour)
+        = render 'layouts/labour_sidebar/_sidebar'
+      - elsif current_user.has_role?(Setting.roles.supervisor)
+        = render 'layouts/supervisor_sidebar/_sidebar'
+      - elsif current_user.has_role?(Setting.roles.constructor)
+        = render 'layouts/constructor_sidebar/_sidebar'
+      - elsif current_user.has_role?(Setting.roles.prospector)
+        = render 'layouts/prospector_sidebar/_sidebar'
+      - elsif current_user.has_role?(Setting.roles.designer)
+        = render 'layouts/designer_sidebar/_sidebar'
+      - elsif current_user.has_role?(Setting.roles.monitor)
+        = render 'layouts/monitor_sidebar/_sidebar'
+      - elsif current_user.has_role?(Setting.roles.agentor)
+        = render 'layouts/agentor_sidebar/_sidebar'
+      - else
+
+      = link_to table_templates_path, :class => "list-group-item list-group-item-action border-0 text-left pl-4" do
+        = fa_icon "area-chart", text: Setting.table_templates.label, class: "mx-3"

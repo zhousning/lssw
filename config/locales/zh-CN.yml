@@ -1,0 +1,212 @@
+zh-CN:
+  layouts:
+    application:
+      site_title: "实验室"
+    application_control:
+      site_title: "实验室"
+    application_mobile:
+      site_title: "实验室"
+
+  home:
+    index:
+      title: "首页"
+    help:
+      title: "帮助中心"
+    custom_service:
+      title: 茶源客服
+
+  users:
+    control:
+      title: "个人中心"
+    manage:
+      title: "管理用户"
+    index:
+      title: "用户列表"
+    show:
+      title: "用户详情"
+    edit:
+      title: "编辑用户"
+    registrations:
+      new:
+        title: "用户注册"
+    confirmations:
+      new:
+        title: "重新发送邮件"
+    sessions:
+      new:
+        title: "用户登录"
+    passwords:
+      forget:
+        title: "找回密码"
+    binding:
+      title: "绑定帐号"
+    sendmail:
+      title: "邮件已发送"
+    confirm:
+      title: "邮箱已确认"
+    agreement:
+      title: "用户协议"
+    center: 
+      title: 个人中心
+    mobile_authc_new:
+      title: 实名认证 
+    mobile_authc_status:
+      title: 实名认证状态 
+    level:
+      title: 等级 
+
+  roles:
+    manage:
+      title: "管理角色"
+    index:
+      title: "角色列表"
+    new:
+      title: "新建角色"
+    show:
+      title: "角色详情"
+    edit:
+      title: "编辑角色"
+
+  buyers:
+    manage:
+      title: "客户管理"
+    index:
+      title: "客户列表"
+    new:
+      title: "添加客户"
+    show:
+      title: "查看客户"
+    edit:
+      title: "编辑客户"
+  accounts:
+    info: 
+      title: 账户信息
+    edit:
+      title: 安全密码
+  citrines:
+    index:
+      title: 茶晶兑换
+    info:
+      title: 我的茶晶
+  demands:
+    new:
+      title: 发布求购
+    index:
+      title: 我的求购
+  sells:
+    new:
+      title: 发布转让
+    index:
+      title: 我的转让
+  extract_cashes:
+    new:
+      title: 提现
+
+  activities:
+    index:
+      title: "科研活动"
+    show:
+      title: "科研活动"
+  reports:
+    index:
+      title: "科研报告"
+    show:
+      title: "科研报告"
+  labs:
+    index:
+      title: 实验室 
+    show:
+      title: 实验室
+  members:
+    index:
+      title: 科研队伍  
+    show:
+      title: 科研队伍
+  results:
+    index:
+      title: 科研成果  
+    show:
+      title: 科研成果
+  manages:
+    index:
+      title: 联系我们  
+    show:
+      title: 联系我们
+  notices:
+    index:
+      title: "公告列表"
+    new:
+      title: "新建公告"
+    show:
+      title: "公告详情"
+    edit:
+      title: "编辑公告"
+    mobile_index:
+      title: "公告列表"
+    mobile_show:
+      title: "公告详情"
+  wares:
+    index:
+      title: "商品列表"
+    new:
+      title: "新建商品"
+    show:
+      title: "商品详情"
+    edit:
+      title: "编辑商品"
+    mobile_index:
+      title: "商品列表"
+    mobile_show:
+      title: "商品详情"
+  share_pools:
+    show:
+      title: 分红池
+    current_month:
+      title: 本月分红
+  tasks:
+    invite:
+      title: 邀请好友
+  teams:
+    index:
+      title: 我的团队
+  orders:
+    new:
+      title: 充值中心
+  trade_orders:
+    index:
+      title: "订单列表"
+    new:
+      title: "新建订单"
+    show:
+      title: "订单详情"
+    edit:
+      title: "编辑订单"
+    pending:
+      title: "待支付订单"
+    paid:
+      title: "已支付,待发货订单"
+    departed:
+      title: "已发货订单"
+    completed:
+      title: "已完成订单"
+    all:
+      title: "我的订单"
+  trades:
+    index:
+      title: 茶坊
+    betray_new:
+      title: 求购 
+    buy_new:
+      title: 转让 
+  trees:
+    index:
+      title:
+        实验室
+  pick_records:
+    index:
+      title:
+        采茶记录
+  leafs:
+    index:
+      title:
+        我的茶叶

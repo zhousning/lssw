@@ -1,0 +1,7 @@
+.container.py-3
+  .row
+    .col-md-3.sidebar-bg.min-height-info
+      %ul.list-group.list-group-flush.pt-3
+        = yield :sidebar_body
+    .col-md-9
+      = yield :content_body

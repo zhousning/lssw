@@ -1,0 +1,38 @@
+- provide(:title, t('.title'))
+
+- content_for :sidebar_body do
+  - @labs.each do |lab|
+    = link_to lab.title, lab_path(lab), :class => "list-group-item text-dark"
+  = link_to "科研成员", members_path, :class => "list-group-item text-dark"
+
+- content_for :content_body do
+  .row
+    .col-md-12
+      .heading
+        %img{:src => "https://image.ibb.co/cbCMvA/logo.png"}/
+  .bio-info
+    .row.mb-5
+      .col-md-6
+        .row
+          .col-md-12
+            .bio-image
+              = image_tag "/" + @member.photo
+      .col-md-6
+        .bio-content
+          %h1
+            = @member.name
+          %h6
+            = Setting.members.email + " : " 
+            = @member.email
+
+          %h6
+            = Setting.members.level
+            = @member.level
+          %h6
+            = Setting.members.homepage
+            = @member.homepage
+    .row
+      .col-md-12
+        = @member.intro.html_safe
+
+= render "layouts/control_panel"

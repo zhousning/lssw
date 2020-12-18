@@ -1,0 +1,57 @@
+- provide(:title, t('.title'))
+
+%main{:role => "main"}
+  %section.text-center
+    .container.px-0
+      .card.bg-dark.text-white.border-0
+        = image_tag "home-main.jpg", :class => "card-img"
+        .card-img-overlay
+          %h5.card-title Card title
+          %p.card-text.text-center 新能源
+          %p.card-text Last updated 3 mins ago
+  .album.py-3
+    .container.px-0
+      .row
+        .col-md-9
+          .row
+            .col-md-4
+              .card.mb-4.box-shadow
+                = image_tag "one.jpg", :class => "card-img-top"
+                .card-body
+                  %p.card-text.text-center 新能源
+            .col-md-4
+              .card.mb-4.box-shadow
+                = image_tag "one.jpg", :class => "card-img-top"
+                .card-body
+                  %p.card-text.text-center 新能源
+            .col-md-4
+              .card.mb-4.box-shadow
+                = image_tag "one.jpg", :class => "card-img-top"
+                .card-body
+                  %p.card-text.text-center 新能源
+            .col-md-4
+              .card.mb-4.box-shadow
+                = image_tag "one.jpg", :class => "card-img-top"
+                .card-body
+                  %p.card-text.text-center 新能源
+            .col-md-4
+              .card.mb-4.box-shadow
+                = image_tag "one.jpg", :class => "card-img-top"
+                .card-body
+                  %p.card-text.text-center 新能源
+            .col-md-4
+              .card.mb-4.box-shadow
+                = image_tag "one.jpg", :class => "card-img-top"
+                .card-body
+                  %p.card-text.text-center 新能源
+        .col-md-3
+          .card
+            .card-header.bg-primary.text-light
+              了解更多
+            .card-body.p-0
+              %ul.list-group.list-group-flush
+                - @notices.each do |notice|
+                  = link_to truncate(notice.title, :length => 14), notice_path(notice), :class => "list-group-item list-group-item-action border-0"
+              -#
+                %marquee{ :behavior => "scroll", :bgcolor => "#ffffff", :direction => "up", :hspace => "0", :onmouseout => "this.start()", :onmouseover => "this.stop()", :scrollamount => "1", :scrolldelay => "10", :vspace => "10"}
+

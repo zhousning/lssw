@@ -1,0 +1,70 @@
+.form-row
+
+  .col-6
+    .form-group.row
+      = f.label Setting.designer_constructor_certs.reg_no, :class => "col-3 text-right col-form-label col-form-label"
+      .col-9
+        = f.text_field :reg_no, :class => "form-control", :required => true
+      
+  .col-6
+    .form-group.row
+      = f.label Setting.designer_constructor_certs.start, :class => "col-3 text-right col-form-label col-form-label"
+      .col-9
+        = f.date_field :start, :class => "form-control", :required => true
+      
+  .col-6
+    .form-group.row
+      = f.label Setting.designer_constructor_certs.cert_no, :class => "col-3 text-right col-form-label col-form-label"
+      .col-9
+        = f.text_field :cert_no, :class => "form-control", :required => true
+      
+  .col-6
+    .form-group.row
+      = f.label Setting.designer_constructor_certs.end, :class => "col-3 text-right col-form-label col-form-label"
+      .col-9
+        = f.date_field :end, :class => "form-control", :required => true
+      
+  .col-6
+    .form-group.row
+      = f.label Setting.designer_constructor_certs.level, :class => "col-3 text-right col-form-label col-form-label"
+      .col-9
+        = f.select :level, options_for_zh_level, {:include_blank=>false}, {:class=>"form-control", :required => true}
+      
+.form-row
+
+  .col-6
+    .form-group.row
+      = f.label "注册证书人像面", :class => "col-3 text-right col-form-label col-form-label"
+      .col-3
+        %label.newbtn
+          = image_tag f.one_image("cert_front"), :class => "blah"
+          = f.file_field :cert_front, :accept => "image/png, image/jpeg, image/gif", :class => "select-file", :required => true, :onchange => "readURL(this);"
+
+  .col-6
+    .form-group.row
+      = f.label "注册证书单位面", :class => "col-3 text-right col-form-label col-form-label"
+      .col-3
+        %label.newbtn
+          = image_tag f.one_image("cert_back"), :class => "blah"
+          = f.file_field :cert_back, :accept => "image/png, image/jpeg, image/gif", :class => "select-file", :required => true, :onchange => "readURL(this);"
+
+  .col-6
+    .form-group.row
+      = f.label "初始证书编码面", :class => "col-3 text-right col-form-label col-form-label"
+      .col-3
+        %label.newbtn
+          = image_tag f.one_image("start_front"), :class => "blah"
+          = f.file_field :start_front, :accept => "image/png, image/jpeg, image/gif", :class => "select-file", :required => true, :onchange => "readURL(this);"
+
+  .col-6
+    .form-group.row
+      = f.label "初始证书人像面", :class => "col-3 text-right col-form-label col-form-label"
+      .col-3
+        %label.newbtn
+          = image_tag f.one_image("start_back"), :class => "blah"
+          = f.file_field :start_back, :accept => "image/png, image/jpeg, image/gif", :class => "select-file", :required => true, :onchange => "readURL(this);"
+
+
+.form-group.row
+  .col-3.offset-2
+    = f.submit '保存', :class => "btn btn-success"

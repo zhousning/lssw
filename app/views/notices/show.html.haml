@@ -1,0 +1,16 @@
+- provide(:title, t('.title'))
+
+- content_for :sidebar_body do
+  = link_to "公告信息", notices_path, :class => "list-group-item text-dark"
+
+- content_for :content_body do
+  %h5.text-center.mt-3
+    = @notice.title
+  %p.text-center
+    %small
+      = "发布时间: " +  @notice.created_at.strftime('%Y-%m-%d')
+  %hr
+  = @notice.content.html_safe
+    
+
+= render "layouts/control_panel"

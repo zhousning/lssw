@@ -1,0 +1,23 @@
+- provide(:title, t('.title'))
+
+.signin-wrap
+  = devise_error_messages!
+  = form_for(resource, as: resource_name, url: session_path(resource_name), :html => { class: 'form-signin'}) do |f|
+    .text-center.mb-4
+      %img.mb-4{:alt => "", :height => "72", :src => "https://getbootstrap.com/assets/brand/bootstrap-solid.svg", :width => "72"}/
+      %h1.h3.mb-3.font-weight-normal
+        登录
+    .form-label-group
+      = f.phone_field :phone, autofocus: true, :id => "inputPhone", :class => "form-control", :required => "", :placeholder => "请输入手机号"
+      %label.sr-only{:for => "inputPhone"} 电话 
+    .form-label-group
+      = f.password_field :password, autocomplete: "off", :id => "inputPassword", :class => "form-control", :required => "", :placeholder => "请输入密码"
+      %label.sr-only{:for => "inputPassword"} 密码 
+    %p.d-flex.justify-content-between
+      = link_to "注 册", new_user_registration_path, :class => "text-success"
+      = link_to "忘记密码?", forget_path, :class => "text-primary"
+    = f.submit "登 录", class: "btn btn-lg btn-primary btn-block"
+    - if devise_mapping.rememberable?
+      .form-check
+        %label.form-check-label
+          = f.check_box :remember_me, :checked=>true, class: "form-check-input d-none"

@@ -1,0 +1,3 @@
+$(".labs").ready(function() {
+
+});

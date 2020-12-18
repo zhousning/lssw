@@ -1,0 +1,55 @@
+html,body {
+  height: 100%;
+}
+th, td {
+  font-size: 1.5rem;
+}
+img {
+  max-width: 100%;
+}
+.line-height-45{
+  line-height: 45px;
+}
+.font-1rem{
+  font-size: 1rem;
+}
+.font-1-5rem{
+  font-size: 1.5rem;
+}
+.font-2rem{
+  font-size: 2rem;
+}
+.font-2-5rem{
+  font-size: 2.5rem;
+}
+.font-3rem{
+  font-size: 3rem;
+}
+.font-4rem{
+  font-size: 4rem;
+}
+.tea-button-green{
+  background: #51B79c;
+  font-size: 2rem;
+  height: 5.9rem;
+}
+.tea-hr{
+  border: 1px solid #dddddd;
+}
+#invite-qrcode table {
+  border-width: 0;
+  border-style: none;
+  border-color: #0000ff;
+  border-collapse: collapse;
+}
+
+ #invite-qrcode td {
+  border-left: solid 10px #000;
+  padding: 0; 
+  margin: 0; 
+  width: 0px; 
+  height: 10px; 
+}
+
+#invite-qrcode td.black { border-color: #000; }
+#invite-qrcode td.white { border-color: #fff; }

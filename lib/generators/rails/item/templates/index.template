@@ -1,0 +1,33 @@
+- provide(:title, t('.title'))
+
+- content_for :main_body do
+  .container-fluid
+    .row
+      .col-md-3
+        = render "layouts/system_search"
+      .col-md-2
+        = link_to "添加", new_<%= @mu %>_path, :class => "btn btn-info"
+    .row.buyer-table-ctn
+      .col-md-12
+        %table.table.text-center.table-bordered.table-list-search
+          %thead
+            %tr
+              %th #
+            <% @attrs.each do |attr| %>
+              %th 
+                = Setting.<%= @mpu %>.<%= attr %><% end %>
+              %th
+          %tbody
+            - @<%= @mpu %>.each_with_index do |<%= @mu %>, index|
+              %tr
+                %td
+                  = index+1
+              <% @attrs.each do |attr| %>
+                %td
+                  = <%= @mu %>.<%= attr %><% end %>
+                %td
+                  = link_to "查看", <%= @mu %>_path(<%= @mu %>), :class => "btn btn-primary btn-sm"
+                  = link_to "编辑", edit_<%= @mu %>_path(<%= @mu %>), :class => "btn btn-success btn-sm"
+                  = link_to "删除", <%= @mu  %>, :method => :delete, :data => {:confirm => "确定删除当前角色吗?"}, :class => "btn btn-danger btn-sm"
+
+= render "layouts/control_panel"

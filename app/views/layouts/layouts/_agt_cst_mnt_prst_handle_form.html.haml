@@ -1,0 +1,88 @@
+.form-row
+  .col-6
+    .form-group.row
+      = f.label Setting.agentor_handles.name, :class => "col-3 text-right col-form-label col-form-label"
+      .col-9
+        = f.text_field :name, :class => "form-control", :required => true
+
+  .col-6
+    .form-group.row
+      = f.label Setting.agentor_handles.phone, :class => "col-3 text-right col-form-label col-form-label"
+      .col-9
+        = f.phone_field :phone, :class => "form-control", :required => true
+      
+  .col-6
+    .form-group.row
+      = f.label Setting.agentor_handles.idno, :class => "col-3 text-right col-form-label col-form-label"
+      .col-9
+        = f.text_field :idno, :class => "form-control", :required => true
+      
+  .col-6
+    .form-group.row
+      = f.label Setting.agentor_handles.cpt_job, :class => "col-3 text-right col-form-label col-form-label"
+      .col-9
+        = f.text_field :cpt_job, :class => "form-control", :required => true
+      
+  .col-6
+    .form-group.row
+      = f.label Setting.agentor_handles.prj_job, :class => "col-3 text-right col-form-label col-form-label"
+      .col-9
+        = f.text_field :prj_job, :class => "form-control", :required => true
+      
+.form-row
+
+  .col-6
+    .form-group.row
+      = f.label "身份证正面", :class => "col-3 text-right col-form-label col-form-label"
+      .col-3
+        %label.newbtn
+          = image_tag f.one_image("idcard_front"), :class => "blah"
+          = f.file_field :idcard_front, :accept => "image/png, image/jpeg, image/gif", :class => "select-file", :required => true, :onchange => "readURL(this);"
+
+  .col-6
+    .form-group.row
+      = f.label "身份证反面", :class => "col-3 text-right col-form-label col-form-label"
+      .col-3
+        %label.newbtn
+          = image_tag f.one_image("idcard_back"), :class => "blah"
+          = f.file_field :idcard_back, :accept => "image/png, image/jpeg, image/gif", :class => "select-file", :required => true, :onchange => "readURL(this);"
+
+  .col-6
+    .form-group.row
+      = f.label "注册印章", :class => "col-3 text-right col-form-label col-form-label"
+      .col-3
+        %label.newbtn
+          = image_tag f.one_image("stamp_front"), :class => "blah"
+          = f.file_field :stamp_front, :accept => "image/png, image/jpeg, image/gif", :class => "select-file", :required => true, :onchange => "readURL(this);"
+
+  .col-6
+    .form-group.row
+      = f.label "注册印章", :class => "col-3 text-right col-form-label col-form-label"
+      .col-3
+        %label.newbtn
+          = image_tag f.one_image("stamp_back"), :class => "blah"
+          = f.file_field :stamp_back, :accept => "image/png, image/jpeg, image/gif", :class => "select-file", :required => true, :onchange => "readURL(this);"
+
+  .col-6
+    .form-group.row
+      = f.label "任免书", :class => "col-3 text-right col-form-label col-form-label"
+      .col-3
+        %label.newbtn
+          = image_tag f.one_image("hr_front"), :class => "blah"
+          = f.file_field :hr_front, :accept => "image/png, image/jpeg, image/gif", :class => "select-file", :required => true, :onchange => "readURL(this);"
+
+  .col-6
+    .form-group.row
+      = f.label "聘用合同", :class => "col-3 text-right col-form-label col-form-label"
+      .col-3
+        %label.newbtn
+          = image_tag f.one_image("hr_back"), :class => "blah"
+          = f.file_field :hr_back, :accept => "image/png, image/jpeg, image/gif", :class => "select-file", :required => true, :onchange => "readURL(this);"
+
+
+.form-group.row
+  .col-3.offset-2
+    = f.submit '保存', :class => "btn btn-success"
+  .col-3.offset-1
+    -#
+      = link_to '返回', agentor_handles_path, :class => "btn btn-danger"

@@ -1,0 +1,41 @@
+.container.py-5
+  .row
+    .col-sm-12.text-left
+      -#
+        = image_tag "logo.png", :class => "float-left"
+      = image_tag "logo.png"
+.container.px-0
+  %nav#home-nav.navbar.navbar-dark.bg-primary.p-0
+    -#
+      %ul.navbar-nav
+      %li.nav-item.dropdown
+        = link_to '#', :id => "one", :class => "nav-link dropdown-toggle text-center", :'data-toggle' => "dropdown", :'aria-haspopup' => 'true' do
+        .dropdown-menu{:'aria-labelledby' => 'one'}
+          %a.dropdown-item 33
+    = link_to root_path, :class => "navbar-brand col-sm-2 col-md-2 mr-0 text-center" do
+      首页
+    = link_to labs_path, :class => "navbar-brand col-sm-2 col-md-2 mr-0 text-center" do
+      = Setting.labs.tag
+    = link_to results_path, :class => "navbar-brand col-sm-2 col-md-2 mr-0 text-center" do
+      = Setting.results.tag
+    = link_to reports_path, :class => "navbar-brand col-sm-2 col-md-2 mr-0 text-center" do
+      业务办理
+    = link_to notices_path, :class => "navbar-brand col-sm-2 col-md-2 mr-0 text-center" do
+      = Setting.notices.tag
+    = link_to manages_path, :class => "navbar-brand col-sm-2 col-md-2 mr-0 text-center" do
+      = Setting.manages.tag
+  -#
+    %ul.w-100.navbar-nav.justify-content-end.px-2
+    - unless user_signed_in?
+      %li.nav-item
+        = link_to new_user_registration_path, :class => "nav-link" do
+          注册
+      %li.nav-item
+        = link_to "登录", new_user_session_path, :class => "nav-link"
+    - else
+      - if current_user.super_admin?
+        %li.nav-item
+          = link_to "后台管理", admin_root_path, :class => "nav-link"
+      -#
+        %li.nav-item
+          %a.nav-link{:href=>destroy_user_session_path, "data-method"=>"delete"} 注销

@@ -1,0 +1,24 @@
+.card.shadow.rounded-0
+  - if "#{action_name}" == Setting.systems.index
+    .card-header.bg-primary.text-white.rounded-0
+      = yield :card_header
+  - elsif "#{action_name}" == Setting.systems.new
+    .card-header.bg-danger.text-white.rounded-0
+      = yield :card_header
+  - elsif "#{action_name}" == Setting.systems.show
+    .card-header.bg-info.text-white.rounded-0
+      = yield :card_header
+  - elsif "#{action_name}" == Setting.systems.edit
+    .card-header.bg-success.text-white.rounded-0
+      = yield :card_header
+  - else
+    .card-header.bg-white.rounded-0
+      = yield :card_header
+  .card-body
+    = yield :card_body
+-#
+  - content_for :card_header do
+    card_header
+  - content_for :card_body do
+    card_body
+  = render "layouts/bootstrap/card"
