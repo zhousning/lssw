@@ -19,7 +19,7 @@
       .col-3
         .card.rounded-0
           .card-header.bg-white.text-primary.p-2
-            业绩
+            企业动态
           .card-body.p-0
             %ul.list-group.list-group-flush
               %li.list-group-item.d-flex.justify-content-between.align-items-center.py-2
@@ -37,7 +37,16 @@
               %li.list-group-item.d-flex.justify-content-between.align-items-center.py-2
                 业绩
                 %span.badge.badge-primary.badge-pill 14
-      .col-6
+              %li.list-group-item.d-flex.justify-content-between.align-items-center.py-2
+                业绩
+                %span.badge.badge-primary.badge-pill 14
+              %li.list-group-item.d-flex.justify-content-between.align-items-center.py-2
+                业绩
+                %span.badge.badge-primary.badge-pill 14
+              %li.list-group-item.d-flex.justify-content-between.align-items-center.py-2
+                业绩
+                %span.badge.badge-primary.badge-pill 14
+      .col-9
         %main{:role => "main"}
           - content_for :carousel_first_img do
             = image_tag "car1.png", :class => "d-block w-100"
@@ -46,42 +55,43 @@
           - content_for :carousel_third_img do
             = image_tag "car1.png", :class => "d-block w-100"
           = render "layouts/bootstrap/carousel"
-      .col-3
-        .row
-          .col-6.pl-0
-            .border.text-center.pt-4.mb-2.py-2
-              %a{:href => "#"}
-                %p.mb-0
-                  %i.fa.fa-group.fa-4x.text-success
-                %p.mb-0.text-muted
-                  比选人系统
-            .border.text-center.pt-4.py-2
-              %a{:href => "#"}
-                %p.mb-0
-                  %i.fa.fa-id-badge.fa-4x.text-primary
-                %p.mb-0.text-muted
-                  比选申请人系统
-          .col-6.pl-0
-            .border.d-flex.justify-content-center.align-items-center.py-3.mb-1
-              %a{:href => "#"}
-                %p.mb-0
-                  %i.fa.fa-user.text-primary
-                  注册
-            .border.d-flex.justify-content-center.align-items-center.py-3.mb-1
-              %a{:href => "#"}
-                %p.mb-0
-                  %i.fa.fa-weixin.text-primary
-                    在线客服
-            .border.d-flex.justify-content-center.align-items-center.py-3.mb-1
-              %a{:href => "#"}
-                %p.mb-0
-                  %i.fa.fa-mobile.text-primary
-                    手机客户端
-            .border.d-flex.justify-content-center.align-items-center.py-3.mb-1
-              %a{:href => "#"}
-                %p.mb-0
-                  %i.fa.fa-map.text-primary
-                    地图
+      -#
+        .col-3
+          .row
+            .col-6.pl-0
+              .border.text-center.pt-4.mb-2.py-2
+                %a{:href => "#"}
+                  %p.mb-0
+                    %i.fa.fa-group.fa-4x.text-success
+                  %p.mb-0.text-muted
+                    比选人系统
+              .border.text-center.pt-4.py-2
+                %a{:href => "#"}
+                  %p.mb-0
+                    %i.fa.fa-id-badge.fa-4x.text-primary
+                  %p.mb-0.text-muted
+                    比选申请人系统
+            .col-6.pl-0
+              .border.d-flex.justify-content-center.align-items-center.py-3.mb-1
+                %a{:href => "#"}
+                  %p.mb-0
+                    %i.fa.fa-user.text-primary
+                    注册
+              .border.d-flex.justify-content-center.align-items-center.py-3.mb-1
+                %a{:href => "#"}
+                  %p.mb-0
+                    %i.fa.fa-weixin.text-primary
+                      在线客服
+              .border.d-flex.justify-content-center.align-items-center.py-3.mb-1
+                %a{:href => "#"}
+                  %p.mb-0
+                    %i.fa.fa-mobile.text-primary
+                      手机客户端
+              .border.d-flex.justify-content-center.align-items-center.py-3.mb-1
+                %a{:href => "#"}
+                  %p.mb-0
+                    %i.fa.fa-map.text-primary
+                      地图
 
 %section.my-3
   .container
@@ -89,7 +99,7 @@
       .col-3
         .card.rounded-0
           .card-header.bg-white.text-primary.p-2
-            法律*通知
+            公司党建
           .card-body.px-0.py-1
             %ul.mb-0
               - 10.times do |j|
@@ -126,8 +136,8 @@
     .row
       .col-3
         .card.rounded-0
-          .card-header.bg-white.text-primary.p-2
-            法律*通知
+          .card-header.dangjianbox-title.p-2
+            公司党建
           .card-body.px-0.py-1
             %ul.mb-0
               - 13.times do |j|
@@ -136,7 +146,7 @@
       .col-9
         .row.mb-3
           .col-12
-            = image_tag "ad-weixin.png", :class => "w-100"
+            = image_tag "dangjian.png", :class => "w-100"
         .card.rounded-0
           .card-header.bg-white.text-primary.p-0.border-0
             %nav
@@ -199,7 +209,7 @@
       .col-9
         .row.mb-3
           .col-12
-            = image_tag "ad-weixin.png", :class => "w-100"
+            = image_tag "shuiwu.jpeg", :class => "w-100"
         .card.rounded-0
           .card-header.bg-white.text-primary.p-0.border-0
             %nav
