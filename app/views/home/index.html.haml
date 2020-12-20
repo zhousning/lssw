@@ -17,119 +17,124 @@
   .container.py-2.bg-white
     .row
       .col-3
-        .card.rounded-0
-          .card-header.bg-white.text-primary.p-2
-            企业动态
+        .card.rounded-0.border-0
+          -#
+            .card-header.bg-white.text-primary.p-2
+              业务办理地址
           .card-body.p-0
             %ul.list-group.list-group-flush
-              %li.list-group-item.d-flex.justify-content-between.align-items-center.py-2
-                业绩
-                %span.badge.badge-primary.badge-pill 14
-              %li.list-group-item.d-flex.justify-content-between.align-items-center.py-2
-                业绩
-                %span.badge.badge-primary.badge-pill 14
-              %li.list-group-item.d-flex.justify-content-between.align-items-center.py-2
-                业绩
-                %span.badge.badge-primary.badge-pill 14
-              %li.list-group-item.d-flex.justify-content-between.align-items-center.py-2
-                业绩
-                %span.badge.badge-primary.badge-pill 14
-              %li.list-group-item.d-flex.justify-content-between.align-items-center.py-2
-                业绩
-                %span.badge.badge-primary.badge-pill 14
-              %li.list-group-item.d-flex.justify-content-between.align-items-center.py-2
-                业绩
-                %span.badge.badge-primary.badge-pill 14
-              %li.list-group-item.d-flex.justify-content-between.align-items-center.py-2
-                业绩
-                %span.badge.badge-primary.badge-pill 14
-              %li.list-group-item.d-flex.justify-content-between.align-items-center.py-2
-                业绩
-                %span.badge.badge-primary.badge-pill 14
-      .col-9
+              %li.list-group-item.py-e.bg-2eacce.text-white
+                %p
+                  崇文新区东门南梁山水务客服中心
+                客服热线:7360555
+              %li.list-group-item.py-3.bg-2eacce.text-white
+                %p
+                  新城政务中心服务大厅梁山水务业务办理窗口
+                客服热线:7366767
+      .col-6
         %main{:role => "main"}
           - content_for :carousel_first_img do
             = image_tag "car1.png", :class => "d-block w-100"
           - content_for :carousel_second_img do
-            = image_tag "car1.png", :class => "d-block w-100"
+            = image_tag "car2.png", :class => "d-block w-100"
           - content_for :carousel_third_img do
-            = image_tag "car1.png", :class => "d-block w-100"
+            = image_tag "car3.png", :class => "d-block w-100"
           = render "layouts/bootstrap/carousel"
-      -#
-        .col-3
-          .row
-            .col-6.pl-0
-              .border.text-center.pt-4.mb-2.py-2
-                %a{:href => "#"}
-                  %p.mb-0
-                    %i.fa.fa-group.fa-4x.text-success
-                  %p.mb-0.text-muted
-                    比选人系统
-              .border.text-center.pt-4.py-2
-                %a{:href => "#"}
-                  %p.mb-0
-                    %i.fa.fa-id-badge.fa-4x.text-primary
-                  %p.mb-0.text-muted
-                    比选申请人系统
-            .col-6.pl-0
-              .border.d-flex.justify-content-center.align-items-center.py-3.mb-1
-                %a{:href => "#"}
-                  %p.mb-0
-                    %i.fa.fa-user.text-primary
-                    注册
-              .border.d-flex.justify-content-center.align-items-center.py-3.mb-1
-                %a{:href => "#"}
-                  %p.mb-0
-                    %i.fa.fa-weixin.text-primary
-                      在线客服
-              .border.d-flex.justify-content-center.align-items-center.py-3.mb-1
-                %a{:href => "#"}
-                  %p.mb-0
-                    %i.fa.fa-mobile.text-primary
-                      手机客户端
-              .border.d-flex.justify-content-center.align-items-center.py-3.mb-1
-                %a{:href => "#"}
-                  %p.mb-0
-                    %i.fa.fa-map.text-primary
-                      地图
+      .col-3
+        .row
+          .col-6.pl-0
+            .border.text-center.pt-4.mb-2.py-2.bg-info
+              %a{:href => "#"}
+                %p.mb-0
+                  %i.fa.fa-group.fa-4x.text-white
+                %p.mb-0.text-white
+                  我的用水
+            .border.text-center.pt-4.py-2.bg-primary
+              %a{:href => "#"}
+                %p.mb-0
+                  %i.fa.fa-id-badge.fa-4x.text-white
+                %p.mb-0.text-white
+                  水费查询
+          .col-6.pl-0
+            .border.d-flex.justify-content-center.align-items-center.py-3.mb-1.bg-success
+              = link_to result_path(@results.first) do 
+                %p.mb-0
+                  %i.fa.fa-user.text-white
+                    办理指南
+            .border.d-flex.justify-content-center.align-items-center.py-3.mb-1.bg-warning
+              = link_to result_path(@results.second) do 
+                %p.mb-0
+                  %i.fa.fa-list.text-white
+                    服务网点
+            .border.d-flex.justify-content-center.align-items-center.py-3.mb-1.bg-dark
+              = link_to result_path(@results.third) do 
+                %p.mb-0
+                  %i.fa.fa-mobile.text-white
+                    用户报装
+            .border.d-flex.justify-content-center.align-items-center.py-3.mb-1.bg-danger
+              = link_to result_path(@results.fourth) do 
+                %p.mb-0
+                  %i.fa.fa-map.text-white
+                    网上缴费
 
 %section.my-3
   .container
     .row
       .col-3
         .card.rounded-0
-          .card-header.bg-white.text-primary.p-2
-            公司党建
+          .card-header.rounded-0.p-2.qijianbox-title
+            公告信息
           .card-body.px-0.py-1
             %ul.mb-0
-              - 10.times do |j|
+              - @notices.each do |notice|
                 %li.py-1.text-primary
-                  = link_to truncate("业绩业业业业业业业业绩绩绩绩绩绩绩绩", :length => 14), "#", :class => "text-body"
+                  = link_to truncate(notice.title, :length => 14), notice_path(notice), :class => "text-body"
       .col-9
-        .card.rounded-0
+        .card.rounded-0.border.border-white
           .card-header.bg-white.text-primary.p-0.border-0
             %nav
               .index-nav-tab.nav.nav-tabs{:role => "tablist"}
                 %a#nav-home-tab.nav-item.nav-link.active{"aria-controls" => "nav-home", "aria-selected" => "true", "data-toggle" => "tab", :href => "#nav-home", :role => "tab"}
-                  工程项目比选公告
-                %a#nav-profile-tab.nav-item.nav-link{"aria-controls" => "nav-profile", "aria-selected" => "false", "data-toggle" => "tab", :href => "#nav-profile", :role => "tab"} E固定价
-                %a#nav-contact-tab.nav-item.nav-link{"aria-controls" => "nav-contact", "aria-selected" => "false", "data-toggle" => "tab", :href => "#nav-contact", :role => "tab"} Contact
+                  企业建设
+                %a#nav-profile-tab.nav-item.nav-link{"aria-controls" => "nav-profile", "aria-selected" => "false", "data-toggle" => "tab", :href => "#nav-profile", :role => "tab"}
+                  服务宣传
+                %a#nav-contact-tab.nav-item.nav-link{"aria-controls" => "nav-contact", "aria-selected" => "false", "data-toggle" => "tab", :href => "#nav-contact", :role => "tab"}
+                  生活常识
           #nav-tabContent.tab-content.py-1
             #nav-home.tab-pane.fade.show.active{"aria-labelledby" => "nav-home-tab", :role => "tabpanel"}
               %ul.mb-0
-                - 10.times do |i|
+                - @cmpt_cstrs.each do |cstr|
                   %li.py-1.text-primary
                     .row
-                      .col-8
-                        = link_to truncate("业绩业业业业业业业绩绩绩绩绩绩绩绩绩绩绩绩绩绩绩绩", :length => 20), "#", :class => "text-body"
+                      .col-10
+                        = link_to truncate(cstr.title, :length => 20), report_path(cstr), :class => "text-body"
                       .col-2
                         %p.text-muted.font-weight-light.mb-0
-                          48.00万
+                          = cstr.created_at.strftime('%Y-%m-%d')
+                      -#
+                        .col-2
+                          %p.text-muted.font-weight-light.mb-0
+                            48.00万
+            #nav-profile.tab-pane.fade{"aria-labelledby" => "nav-profile-tab", :role => "tabpanel"}
+              %ul.mb-0
+                - @cmpt_servs.each do |serv|
+                  %li.py-1.text-primary
+                    .row
+                      .col-10
+                        = link_to truncate(serv.title, :length => 20), report_path(serv), :class => "text-body"
                       .col-2
                         %p.text-muted.font-weight-light.mb-0
-                          2020-02-24
-            #nav-profile.tab-pane.fade{"aria-labelledby" => "nav-profile-tab", :role => "tabpanel"} ...
-            #nav-contact.tab-pane.fade{"aria-labelledby" => "nav-contact-tab", :role => "tabpanel"} ...
+                          = serv.created_at.strftime('%Y-%m-%d')
+            #nav-contact.tab-pane.fade{"aria-labelledby" => "nav-contact-tab", :role => "tabpanel"}
+              %ul.mb-0
+                - @cmpt_knows.each do |know|
+                  %li.py-1.text-primary
+                    .row
+                      .col-10
+                        = link_to truncate(know.title, :length => 20), report_path(know), :class => "text-body"
+                      .col-2
+                        %p.text-muted.font-weight-light.mb-0
+                          = know.created_at.strftime('%Y-%m-%d')
 
 %section.my-3
   .container
@@ -140,97 +145,143 @@
             公司党建
           .card-body.px-0.py-1
             %ul.mb-0
-              - 13.times do |j|
+              - @act_cmpts.each do |cmpt|
                 %li.py-1.text-primary
-                  = link_to truncate("业绩业业业业业业业业绩绩绩绩绩绩绩绩", :length => 14), "#", :class => "text-body"
+                  = link_to truncate(cmpt.title, :length => 14), activity_path(cmpt), :class => "text-body"
       .col-9
         .row.mb-3
           .col-12
             = image_tag "dangjian.png", :class => "w-100"
-        .card.rounded-0
+        .card.rounded-0.border-0
           .card-header.bg-white.text-primary.p-0.border-0
             %nav
               .index-nav-tab.nav.nav-tabs{:role => "tablist"}
                 %a#nav-agent-tab.nav-item.nav-link.active{"aria-controls" => "nav-agent", "aria-selected" => "true", "data-toggle" => "tab", :href => "#nav-agent", :role => "tab"}
-                  工程项目比选公告
-                %a#nav-law-tab.nav-item.nav-link{"aria-controls" => "nav-law", "aria-selected" => "false", "data-toggle" => "tab", :href => "#nav-law", :role => "tab"} E固定价
-                %a#nav-score-tab.nav-item.nav-link{"aria-controls" => "nav-score", "aria-selected" => "false", "data-toggle" => "tab", :href => "#nav-score", :role => "tab"} Contact
+                  党建和组织工作
+                %a#nav-law-tab.nav-item.nav-link{"aria-controls" => "nav-law", "aria-selected" => "false", "data-toggle" => "tab", :href => "#nav-law", :role => "tab"} 
+                  基层党组织建设
+                %a#nav-score-tab.nav-item.nav-link{"aria-controls" => "nav-score", "aria-selected" => "false", "data-toggle" => "tab", :href => "#nav-score", :role => "tab"}
+                  党员队伍建设
           #agent-tabContent.tab-content.py-1
             #nav-agent.tab-pane.fade.show.active{"aria-labelledby" => "nav-agent-tab", :role => "tabpanel"}
               %ul.mb-0
-                - 10.times do |i|
+                - @act_orgs.each do |org|
                   %li.py-1.text-primary
                     .row
-                      .col-8
-                        = link_to truncate("业绩业业业业业业业绩绩绩绩绩绩绩绩绩绩绩绩绩绩绩绩", :length => 20), "#", :class => "text-body"
+                      .col-10
+                        = link_to truncate(org.title, :length => 20), activity_path(org), :class => "text-body"
                       .col-2
                         %p.text-muted.font-weight-light.mb-0
-                          48.00万
+                          = org.created_at.strftime('%Y-%m-%d')
+                      -#
+                        .col-2
+                          %p.text-muted.font-weight-light.mb-0
+                            48.00万
+            #nav-law.tab-pane.fade{"aria-labelledby" => "nav-law-tab", :role => "tabpanel"}
+              %ul.mb-0
+                - @act_bases.each do |base|
+                  %li.py-1.text-primary
+                    .row
+                      .col-10
+                        = link_to truncate(base.title, :length => 20), activity_path(base), :class => "text-body"
                       .col-2
                         %p.text-muted.font-weight-light.mb-0
-                          2020-02-24
-            #nav-law.tab-pane.fade{"aria-labelledby" => "nav-law-tab", :role => "tabpanel"} ...
-            #nav-score.tab-pane.fade{"aria-labelledby" => "nav-score-tab", :role => "tabpanel"} ...
+                          = base.created_at.strftime('%Y-%m-%d')
+            #nav-score.tab-pane.fade{"aria-labelledby" => "nav-score-tab", :role => "tabpanel"}
+              %ul.mb-0
+                - @act_mebs.each do |meb|
+                  %li.py-1.text-primary
+                    .row
+                      .col-10
+                        = link_to truncate(meb.title, :length => 20), activity_path(meb), :class => "text-body"
+                      .col-2
+                        %p.text-muted.font-weight-light.mb-0
+                          = meb.created_at.strftime('%Y-%m-%d')
 
 %section.my-3
   .container
     .row
       .col-3
         .card.rounded-0.mb-3
-          .card-header.bg-white.text-primary.p-2
+          .card-header.p-2.rounded-0.qiyezhanting-title
             企业展厅
           .card-body.p-2
             .border.d-flex.justify-content-center.align-items-center.mb-1
-              %a{:href => "#"}
-                = image_tag "qyzt.gif"
+              = image_tag "zhanting/1.jpg"
             .border.d-flex.justify-content-center.align-items-center.mb-1
-              %a{:href => "#"}
-                = image_tag "qyzt.gif"
-            .border.d-flex.justify-content-center.align-items-center.mb-1
-              %a{:href => "#"}
-                = image_tag "xwyd.gif"
-            .border.d-flex.justify-content-center.align-items-center.mb-1
-              %a{:href => "#"}
-                = image_tag "xwyd.gif"
+              = image_tag "zhanting/2.jpg"
+            -#
+              .border.d-flex.justify-content-center.align-items-center.mb-1
+                %a{:href => "#"}
+                  = image_tag "xwyd.gif"
+              .border.d-flex.justify-content-center.align-items-center.mb-1
+                %a{:href => "#"}
+                  = image_tag "xwyd.gif"
         .card.rounded-0
-          .card-header.bg-white.text-primary.p-2
+          .card-header.youqing-title.rounded-0.p-2
             友情链接
           .card-body.p-2
             .row
               .col-7
-                = link_to "四川省人民政府", "#", :class => "text-muted"
-              .col-5
-                = link_to "四川在线", "#", :class => "text-muted"
+                = link_to "梁山县人民政府", "http://www.liangshan.gov.cn/", :class => "text-muted", :target => "_blank"
               .col-7
-                = link_to "四川省发改委", "#", :class => "text-muted"
-              .col-5
-                = link_to "四川日报", "#", :class => "text-muted"
+                = link_to "山东公用集团", "http://www.sdgykg.com/", :class => "text-muted", :target => "_blank"
+              -#
+                .col-7
+                  = link_to "四川省发改委", "#", :class => "text-muted"
+                .col-5
+                  = link_to "四川日报", "#", :class => "text-muted"
                 
       .col-9
         .row.mb-3
           .col-12
             = image_tag "shuiwu.jpeg", :class => "w-100"
-        .card.rounded-0
-          .card-header.bg-white.text-primary.p-0.border-0
-            %nav
-              .index-nav-tab.nav.nav-tabs{:role => "tablist"}
-                %a#nav-hot-tab.nav-item.nav-link.active{"aria-controls" => "nav-hot", "aria-selected" => "true", "data-toggle" => "tab", :href => "#nav-hot", :role => "tab"}
-                  工程项目比选公告
-                %a#nav-recommend-tab.nav-item.nav-link{"aria-controls" => "nav-recommend", "aria-selected" => "false", "data-toggle" => "tab", :href => "#nav-recommend", :role => "tab"} E固定价
-                %a#nav-rule-tab.nav-item.nav-link{"aria-controls" => "nav-rule", "aria-selected" => "false", "data-toggle" => "tab", :href => "#nav-rule", :role => "tab"} Contact
-          #hot-tabContent.tab-content.py-1
-            #nav-hot.tab-pane.fade.show.active{"aria-labelledby" => "nav-hot-tab", :role => "tabpanel"}
-              %ul.mb-0
-                - 10.times do |i|
-                  %li.py-1.text-primary
-                    .row
-                      .col-8
-                        = link_to truncate("业绩业业业业业业业绩绩绩绩绩绩绩绩绩绩绩绩绩绩绩绩", :length => 20), "#", :class => "text-body"
-                      .col-2
-                        %p.text-muted.font-weight-light.mb-0
-                          48.00万
-                      .col-2
-                        %p.text-muted.font-weight-light.mb-0
-                          2020-02-24
-            #nav-recommend.tab-pane.fade{"aria-labelledby" => "nav-recommend-tab", :role => "tabpanel"} ...
-            #nav-rule.tab-pane.fade{"aria-labelledby" => "nav-rule-tab", :role => "tabpanel"} ...
+        .row
+          .col-3.mb-2
+            = image_tag "qiye/1.jpg", :class => "img-fluid"
+          .col-3.mb-2
+            = image_tag "qiye/3.jpg", :class => "img-fluid"
+          .col-3.mb-2
+            = image_tag "qiye/4.jpg", :class => "img-fluid"
+          .col-3.mb-2
+            = image_tag "qiye/5.jpg", :class => "img-fluid"
+          .col-3.mb-2
+            = image_tag "qiye/6.jpg", :class => "img-fluid"
+          .col-3.mb-2
+            = image_tag "qiye/7.jpg", :class => "img-fluid"
+          .col-3.mb-2
+            = image_tag "qiye/10.jpg", :class => "img-fluid"
+          .col-3.mb-2
+            = image_tag "qiye/12.jpg", :class => "img-fluid"
+          .col-3.mb-2
+            = image_tag "qiye/13.jpg", :class => "img-fluid"
+          .col-3.mb-2
+            = image_tag "qiye/16.jpg", :class => "img-fluid"
+          .col-3.mb-2
+            = image_tag "qiye/17.jpg", :class => "img-fluid"
+          .col-3.mb-2
+            = image_tag "qiye/20.jpg", :class => "img-fluid"
+
+          -#
+            #cptMembIndicators.carousel.slide{"data-ride" => "carousel"}
+              %ol.carousel-indicators
+                %li.active{"data-slide-to" => "0", "data-target" => "#cptMembIndicators"}
+                %li{"data-slide-to" => "1", "data-target" => "#cptMembIndicators"}
+                %li{"data-slide-to" => "2", "data-target" => "#cptMembIndicators"}
+              .carousel-inner.rounded-0
+                .carousel-item.active
+                  = image_tag "car1.png", :class => "d-block w-100"
+                  .carousel-caption.d-none.d-md-block
+                    %h5
+                    %p
+                .carousel-item
+                  = image_tag "car1.png", :class => "d-block w-100"
+                .carousel-item
+                  = image_tag "car1.png", :class => "d-block w-100"
+              %a.carousel-control-prev{"data-slide" => "prev", :href => "#cptMembIndicators", :role => "button"}
+                %span.carousel-control-prev-icon{"aria-hidden" => "true"}
+                %span.sr-only Previous
+              %a.carousel-control-next{"data-slide" => "next", :href => "#cptMembIndicators", :role => "button"}
+                %span.carousel-control-next-icon{"aria-hidden" => "true"}
+                %span.sr-only Next
+            

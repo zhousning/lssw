@@ -24,20 +24,21 @@ User.create!(:phone => "15763703188", :password => "15763703188", :password_conf
 #
 AdminUser.create!(:phone => Setting.admins.phone, :email => Setting.admins.email, :password => Setting.admins.password, :password_confirmation => Setting.admins.password)
 
-Lab.create!(:title => "实验室简介")
-Lab.create!(:title => "组织机构")
-Lab.create!(:title => "科研方向")
+Lab.create!(:title => "公司简介")
+Lab.create!(:title => "组织架构")
+Lab.create!(:title => "服务承诺")
 
 Member.create!(:title => "成员队伍")
 
-Result.create!(:title => "发表论文")
-Result.create!(:title => "专利")
-Result.create!(:title => "软件著作权")
+Result.create!(:title => "办理指南")
+Result.create!(:title => "服务网点")
+Result.create!(:title => "用户报装")
+Result.create!(:title => "网上缴费")
 
 Notice.create!(:title => "公告")
 
-Report.create!(:title => "学术报告")
-Activity.create!(:title => "科研活动")
+Report.create!(:title => "水务新闻")
+Activity.create!(:title => "党建要闻")
 
 Manage.create!(:title => "联系我们")
 

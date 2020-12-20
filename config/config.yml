@@ -201,18 +201,27 @@ defaults:
     level: 职称
     photo: 头像
   results: &27
-    tag: 新闻咨询
+    tag: 业务办理 
     title: 标题
     content: 正文
     order: 顺序
   reports: &28
-    tag: 学术报告
+    tag: 水务新闻 
     title: 标题
     content: 正文
+    category: 分类
+    ctg_cstr: 企业建设
+    ctg_serv: 服务宣传
+    ctg_know: 生活常识
   activities: &29
-    tag: 科研活动
+    tag: 党建要闻
     title: 标题
+    category: 分类
     content: 正文
+    ctg_cmpt: 公司党建
+    ctg_org: 党建和组织工作
+    ctg_base: 基层党组织建设
+    ctg_meb: 党员队伍建设
   manages: &30
     tag: 联系我们 
     title: 标题

@@ -3,6 +3,7 @@ class CreateReports < ActiveRecord::Migration
     create_table :reports do |t|
       t.string :title,              null: false, default: ""
       t.string :content,              null: false, default: ""
+      t.string :category,              null: false, default: ""
 
       t.timestamps null: false
     end

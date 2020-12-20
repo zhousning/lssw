@@ -79,9 +79,27 @@ body {
     z-index: 0;   
 }
 
+.youqing-title {
+  color: white;
+  background: #d6453b;
+}
+.qiyezhanting-title {
+  color: white;
+  background: #4ac0a3;
+}
+.qijianbox-title {
+  color: white;
+  background: #0096ef;
+}
 .dangjianbox-title {
   color: #D11800;
   background: #f6f5c8;
   //background: image-url("gsdj.jpg") 0 0 repeat-x;
   //background-size: contain;
+}
+.bg-2eacce{
+  background: #fe6724;
+}
+.min-height-900{
+  min-height: 900px;
 }

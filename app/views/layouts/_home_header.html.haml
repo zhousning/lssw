@@ -1,9 +1,11 @@
-.container.py-5
+.container.pt-3.pb-2
   .row
-    .col-sm-12.text-left
+    .col-sm-6.text-left
       -#
         = image_tag "logo.png", :class => "float-left"
-      = image_tag "logo.png"
+      = image_tag "logo.png", :class => "mt-4"
+    .col-sm-2.offset-4.text-right
+      = image_tag "lsswgzh.jpg"
 .container.px-0
   %nav#home-nav.navbar.navbar-dark.bg-primary.p-0
     -#
@@ -17,9 +19,9 @@
     = link_to labs_path, :class => "navbar-brand col-sm-2 col-md-2 mr-0 text-center" do
       = Setting.labs.tag
     = link_to results_path, :class => "navbar-brand col-sm-2 col-md-2 mr-0 text-center" do
-      = Setting.results.tag
-    = link_to reports_path, :class => "navbar-brand col-sm-2 col-md-2 mr-0 text-center" do
       业务办理
+    = link_to reports_path, :class => "navbar-brand col-sm-2 col-md-2 mr-0 text-center" do
+      = Setting.reports.tag
     = link_to notices_path, :class => "navbar-brand col-sm-2 col-md-2 mr-0 text-center" do
       = Setting.notices.tag
     = link_to manages_path, :class => "navbar-brand col-sm-2 col-md-2 mr-0 text-center" do

@@ -1,11 +1,11 @@
 zh-CN:
   layouts:
     application:
-      site_title: "实验室"
+      site_title: "梁山水务有限公司"
     application_control:
-      site_title: "实验室"
+      site_title: "梁山水务有限公司"
     application_mobile:
-      site_title: "实验室"
+      site_title: "梁山水务有限公司"
 
   home:
     index:
@@ -104,29 +104,29 @@ zh-CN:
 
   activities:
     index:
-      title: "科研活动"
+      title: "党建要闻"
     show:
-      title: "科研活动"
+      title: "党建要闻"
   reports:
     index:
-      title: "科研报告"
+      title: "水务新闻"
     show:
-      title: "科研报告"
+      title: "水务新闻"
   labs:
     index:
-      title: 实验室 
+      title: 公司概况 
     show:
-      title: 实验室
+      title: 公司概况
   members:
     index:
-      title: 科研队伍  
+      title: 员工队伍  
     show:
-      title: 科研队伍
+      title: 员工队伍
   results:
     index:
-      title: 科研成果  
+      title: 业务办理 
     show:
-      title: 科研成果
+      title: 业务办理
   manages:
     index:
       title: 联系我们  
@@ -201,7 +201,7 @@ zh-CN:
   trees:
     index:
       title:
-        实验室
+        梁山水务有限公司
   pick_records:
     index:
       title:

@@ -6,11 +6,11 @@
 
 - content_for :content_body do
   %h5.text-center.mt-3
-    = @activitie.title
+    = @activity.title
   %p.text-center
     %small
-      = "发布时间: " +  @activitie.created_at.strftime('%Y-%m-%d')
+      = "发布时间: " +  @activity.created_at.strftime('%Y-%m-%d')
   %hr
-  = @activitie.content.html_safe
+  = @activity.content.html_safe
 
 = render "layouts/control_panel"

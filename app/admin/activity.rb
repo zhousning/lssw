@@ -1,6 +1,6 @@
 ActiveAdmin.register Activity  do
 
-  permit_params  :title, :content
+  permit_params  :title, :content, :category
 
   menu label: Setting.activities.tag, :priority => 6 
   config.per_page = 20
@@ -28,6 +28,7 @@ ActiveAdmin.register Activity  do
   form do |f|
     f.inputs "详情" do
       
+      f.input :category, :as => :select, :collection => [ Setting.activities.ctg_cmpt, Setting.activities.ctg_org, Setting.activities.ctg_base, Setting.activities.ctg_meb,  ], :label => Setting.activities.category
       f.input :title, :label => Setting.activities.title 
       f.kindeditor :content, :label => Setting.activities.content 
     end
@@ -40,6 +41,9 @@ ActiveAdmin.register Activity  do
         activity.id
       end
       
+      row Setting.activities.category do
+        activity.category
+      end
       row Setting.activities.title do
         activity.title
       end

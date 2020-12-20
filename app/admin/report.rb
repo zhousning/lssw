@@ -1,6 +1,6 @@
 ActiveAdmin.register Report  do
 
-  permit_params  :title, :content
+  permit_params  :title, :content, :category
 
   menu label: Setting.reports.tag, :priority => 5 
   config.per_page = 20
@@ -28,6 +28,7 @@ ActiveAdmin.register Report  do
   form do |f|
     f.inputs "详情" do
       
+      f.input :category, :as => :select, :collection => [ Setting.reports.ctg_cstr, Setting.reports.ctg_serv, Setting.reports.ctg_know,  ], :label => Setting.reports.category
       f.input :title, :label => Setting.reports.title 
       f.kindeditor :content, :label => Setting.reports.content 
     end
@@ -38,6 +39,9 @@ ActiveAdmin.register Report  do
     attributes_table do
       row "ID" do
         report.id
+      end
+      row Setting.reports.category do
+        report.category
       end
       
       row Setting.reports.title do

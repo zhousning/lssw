@@ -3,7 +3,7 @@
 - content_for :sidebar_body do
   - @labs.each do |lab|
     = link_to lab.title, lab_path(lab), :class => "list-group-item text-dark"
-  = link_to "科研成员", members_path, :class => "list-group-item text-dark"
+  = link_to "员工队伍", members_path, :class => "list-group-item text-dark"
 - content_for :content_body do
   = @labs.first.content.html_safe
 

@@ -3,6 +3,7 @@ class CreateActivities < ActiveRecord::Migration
     create_table :activities do |t|
       t.string :title,              null: false, default: ""
       t.string :content,              null: false, default: ""
+      t.string :category,              null: false, default: ""
 
       t.timestamps null: false
     end
