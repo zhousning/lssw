@@ -107,7 +107,7 @@
                   %li.py-1.text-primary
                     .row
                       .col-10
-                        = link_to truncate(cstr.title, :length => 20), report_path(cstr), :class => "text-body"
+                        = link_to truncate(cstr.title, :length => 35), report_path(cstr), :class => "text-body"
                       .col-2
                         %p.text-muted.font-weight-light.mb-0
                           = cstr.created_at.strftime('%Y-%m-%d')
@@ -121,7 +121,7 @@
                   %li.py-1.text-primary
                     .row
                       .col-10
-                        = link_to truncate(serv.title, :length => 20), report_path(serv), :class => "text-body"
+                        = link_to truncate(serv.title, :length => 35), report_path(serv), :class => "text-body"
                       .col-2
                         %p.text-muted.font-weight-light.mb-0
                           = serv.created_at.strftime('%Y-%m-%d')
@@ -131,7 +131,7 @@
                   %li.py-1.text-primary
                     .row
                       .col-10
-                        = link_to truncate(know.title, :length => 20), report_path(know), :class => "text-body"
+                        = link_to truncate(know.title, :length => 35), report_path(know), :class => "text-body"
                       .col-2
                         %p.text-muted.font-weight-light.mb-0
                           = know.created_at.strftime('%Y-%m-%d')
@@ -169,7 +169,7 @@
                   %li.py-1.text-primary
                     .row
                       .col-10
-                        = link_to truncate(org.title, :length => 20), activity_path(org), :class => "text-body"
+                        = link_to truncate(org.title, :length => 35), activity_path(org), :class => "text-body"
                       .col-2
                         %p.text-muted.font-weight-light.mb-0
                           = org.created_at.strftime('%Y-%m-%d')
@@ -183,7 +183,7 @@
                   %li.py-1.text-primary
                     .row
                       .col-10
-                        = link_to truncate(base.title, :length => 20), activity_path(base), :class => "text-body"
+                        = link_to truncate(base.title, :length => 35), activity_path(base), :class => "text-body"
                       .col-2
                         %p.text-muted.font-weight-light.mb-0
                           = base.created_at.strftime('%Y-%m-%d')
@@ -193,7 +193,7 @@
                   %li.py-1.text-primary
                     .row
                       .col-10
-                        = link_to truncate(meb.title, :length => 20), activity_path(meb), :class => "text-body"
+                        = link_to truncate(meb.title, :length => 35), activity_path(meb), :class => "text-body"
                       .col-2
                         %p.text-muted.font-weight-light.mb-0
                           = meb.created_at.strftime('%Y-%m-%d')
