@@ -11,6 +11,6 @@
     %small
       = "发布时间: " +  @activity.created_at.strftime('%Y-%m-%d')
   %hr
-  = @activity.content.html_safe
+  = @activity.content.nil? ? '' : @activity.content.html_safe
 
 = render "layouts/control_panel"

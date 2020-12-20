@@ -4,6 +4,6 @@
   - @results.each_with_index do |result, index|
     = link_to result.title, result_path(result), :class => "list-group-item text-dark"
 - content_for :content_body do
-  = @results.first.content.html_safe
+  = @results.first.content.nil? ? '' : @results.first.content.html_safe
 
 = render "layouts/control_panel"

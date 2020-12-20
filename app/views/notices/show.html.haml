@@ -10,7 +10,7 @@
     %small
       = "发布时间: " +  @notice.created_at.strftime('%Y-%m-%d')
   %hr
-  = @notice.content.html_safe
+  = @notice.content.nil? ? '' : @notice.content.html_safe
     
 
 = render "layouts/control_panel"

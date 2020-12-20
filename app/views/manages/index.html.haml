@@ -5,6 +5,6 @@
     = link_to manage.title, "#", :class => "list-group-item text-dark"
 
 - content_for :content_body do
-  = @manages.first.content.html_safe
+  = @manages.first.content.nil? ? '' : @manages.first.content.html_safe
 
 = render "layouts/control_panel"

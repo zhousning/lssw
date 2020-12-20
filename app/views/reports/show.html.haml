@@ -11,6 +11,6 @@
     %small
       = "发布时间: " +  @report.created_at.strftime('%Y-%m-%d')
   %hr
-  = @report.content.html_safe
+  = @report.content.nil? ? '' : @report.content.html_safe
 
 = render "layouts/control_panel"
