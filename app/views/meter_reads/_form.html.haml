@@ -1,0 +1,136 @@
+.container-fluid
+  = form_for @meter_read, :html => {:'data-parsley-validate' => true} do |f|
+    - if @meter_read.errors.any?
+      #error_explanation.alert.alert-danger.alert-dismissible.fade.show
+        %button.close{"aria-label" => "Close", "data-dismiss" => "alert", :type => "button"}
+          %span{"aria-hidden" => "true"} x 
+        %h2= "#{pluralize(@meter_read.errors.count, "error")} prohibited this buyer from being saved:"
+        %ul
+          - @meter_read.errors.full_messages.each do |msg|
+            %li= msg
+    .form-row
+      .col-6
+        .form-group.row
+          = f.label Setting.meter_reads.name, :class => "col-4 text-right col-form-label col-form-label"
+          .col-8
+            = f.text_field :name, :class => "form-control"
+          
+      .col-6
+        .form-group.row
+          = f.label Setting.meter_reads.cal_date, :class => "col-4 text-right col-form-label col-form-label"
+          .col-8
+            = f.text_field :cal_date, :class => "form-control"
+    
+    .form-row
+      .col-6
+        .form-group.row
+          = f.label Setting.meter_reads.std_big_wm, :class => "col-4 text-right col-form-label col-form-label"
+          .col-8
+            = f.number_field :std_big_wm, :class => "form-control"
+          
+      .col-6
+        .form-group.row
+          = f.label Setting.meter_reads.std_sm_wm, :class => "col-4 text-right col-form-label col-form-label"
+          .col-8
+            = f.number_field :std_sm_wm, :class => "form-control"
+          
+      .col-6
+        .form-group.row
+          = f.label Setting.meter_reads.std_vst_wm, :class => "col-4 text-right col-form-label col-form-label"
+          .col-8
+            = f.number_field :std_vst_wm, :class => "form-control"
+          
+    .form-row
+      .col-6
+        .form-group.row
+          = f.label Setting.meter_reads.act_big_read, :class => "col-4 text-right col-form-label col-form-label"
+          .col-8
+            = f.number_field :act_big_read, :class => "form-control"
+          
+      .col-6
+        .form-group.row
+          = f.label Setting.meter_reads.mst_big_read, :class => "col-4 text-right col-form-label col-form-label"
+          .col-8
+            = f.number_field :mst_big_read, :class => "form-control"
+          
+    .form-row
+      .col-6
+        .form-group.row
+          = f.label Setting.meter_reads.act_sm_read, :class => "col-4 text-right col-form-label col-form-label"
+          .col-8
+            = f.number_field :act_sm_read, :class => "form-control"
+          
+      .col-6
+        .form-group.row
+          = f.label Setting.meter_reads.mst_sm_read, :class => "col-4 text-right col-form-label col-form-label"
+          .col-8
+            = f.number_field :mst_sm_read, :class => "form-control"
+          
+    .form-row
+      .col-6
+        .form-group.row
+          = f.label Setting.meter_reads.act_vst_read, :class => "col-4 text-right col-form-label col-form-label"
+          .col-8
+            = f.number_field :act_vst_read, :class => "form-control"
+          
+      .col-6
+        .form-group.row
+          = f.label Setting.meter_reads.mst_vst_read, :class => "col-4 text-right col-form-label col-form-label"
+          .col-8
+            = f.number_field :mst_vst_read, :class => "form-control"
+          
+      .col-6
+        .form-group.row
+          = f.label Setting.meter_reads.act_bigyc_read, :class => "col-4 text-right col-form-label col-form-label"
+          .col-8
+            = f.number_field :act_bigyc_read, :class => "form-control"
+          
+      .col-6
+        .form-group.row
+          = f.label Setting.meter_reads.mst_bigyc_read, :class => "col-4 text-right col-form-label col-form-label"
+          .col-8
+            = f.number_field :mst_bigyc_read, :class => "form-control"
+          
+      .col-6
+        .form-group.row
+          = f.label Setting.meter_reads.act_smyc_read, :class => "col-4 text-right col-form-label col-form-label"
+          .col-8
+            = f.number_field :act_smyc_read, :class => "form-control"
+          
+      .col-6
+        .form-group.row
+          = f.label Setting.meter_reads.mst_smyc_read, :class => "col-4 text-right col-form-label col-form-label"
+          .col-8
+            = f.number_field :mst_smyc_read, :class => "form-control"
+          
+          
+      .col-6
+        .form-group.row
+          = f.label Setting.meter_reads.smp_fc_count, :class => "col-4 text-right col-form-label col-form-label"
+          .col-8
+            = f.number_field :smp_fc_count, :class => "form-control"
+          
+      .col-6
+        .form-group.row
+          = f.label Setting.meter_reads.smp_count, :class => "col-4 text-right col-form-label col-form-label"
+          .col-8
+            = f.number_field :smp_count, :class => "form-control"
+
+      .col-6
+        .form-group.row
+          = f.label Setting.meter_reads.rcv_count, :class => "col-4 text-right col-form-label col-form-label"
+          .col-8
+            = f.number_field :rcv_count, :class => "form-control"
+          
+      .col-6
+        .form-group.row
+          = f.label Setting.meter_reads.wtr_count, :class => "col-4 text-right col-form-label col-form-label"
+          .col-8
+            = f.number_field :wtr_count, :class => "form-control"
+          
+    
+    .form-group.row
+      .col-4.offset-2
+        = f.submit '保存', :class => "btn btn-success"
+      .col-4.offset-1
+        = link_to '返回', meter_reads_path, :class => "btn btn-danger"

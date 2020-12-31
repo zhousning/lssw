@@ -52,6 +52,8 @@ Rails.application.routes.draw do
     get :status, :on => :collection
   end
 
+  resources :meter_reads
+
   resources :roles
 
   root :to => 'home#index'

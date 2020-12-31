@@ -120,6 +120,8 @@ GEM
       tzinfo
     execjs (2.7.0)
     ffi (1.9.25)
+    font-awesome-rails (4.7.0.6)
+      railties (>= 3.2, < 6.2)
     formtastic (3.1.5)
       actionpack (>= 3.2.13)
     formtastic_i18n (0.6.0)
@@ -362,6 +364,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   dragonfly (~> 1.2.0)
+  font-awesome-rails
   gon
   haml-rails
   iconv

@@ -1,0 +1,109 @@
+- provide(:title, t('.title'))
+
+.container-fluid
+  .row
+    %main.col-md-12.p-3{:role => "main"}
+      .card.shadow.rounded-0
+        .card-header.bg-info.text-white.rounded-0
+          %h5
+            = fa_icon "newspaper-o", text: t(controller_name + "." + action_name + '.title')
+            = link_to "/#{controller_name}", :class => "button button-border button-rounded button-caution pull-right  bg-white" do
+              = fa_icon " chevron-left", text: Setting.systems.btn_back, right: false 
+            = link_to "#{request.url}/edit", :class => "button button-border button-rounded button-action pull-right mr-3 bg-white" do
+              = fa_icon "edit", text: Setting.systems.btn_edit, right: false 
+        .card-body
+          .container-fluid
+            .row
+              .col-md-6
+                = @meter_read.name
+                = @meter_read.cal_date
+              .col-md-6
+                %p
+                  计件金额:
+                  = @result[0]
+              .col-md-6
+                %p
+                  抄见率:
+                  = @result[3]
+                %p
+                  准确率:
+                  = @result[4]
+                %p
+                  奖励:
+                  = @result[6]
+              .col-md-6
+                %p
+                  水量回收率:
+                  = @result[5]
+                %p
+                  奖励:
+                  = @result[7]
+            .row
+              .col-md-12
+                %table#meter-read-table.table.text-right.table-bordered
+                  %tdead
+                    %tr
+                      %td 
+                        = Setting.meter_reads.std_sm_wm
+                        = @meter_read.std_sm_wm
+                      %td 
+                        = Setting.meter_reads.std_big_wm
+                        = @meter_read.std_big_wm
+                      %td 
+                        = Setting.meter_reads.std_vst_wm
+                        = @meter_read.std_vst_wm
+                    %tr
+                      %td 
+                        = Setting.meter_reads.act_big_read
+                        = @meter_read.act_big_read
+                      %td 
+                        = Setting.meter_reads.mst_big_read
+                        = @meter_read.mst_big_read
+                    %tr
+                      %td 
+                        = Setting.meter_reads.act_sm_read
+                        = @meter_read.act_sm_read
+                      %td 
+                        = Setting.meter_reads.mst_sm_read
+                        = @meter_read.mst_sm_read
+                    %tr
+                      %td 
+                        = Setting.meter_reads.act_vst_read
+                        = @meter_read.act_vst_read
+                      %td 
+                        = Setting.meter_reads.mst_vst_read
+                        = @meter_read.mst_vst_read
+                    %tr
+                      %td 
+                        = Setting.meter_reads.act_bigyc_read
+                        = @meter_read.act_bigyc_read
+                      %td 
+                        = Setting.meter_reads.mst_bigyc_read
+                        = @meter_read.mst_bigyc_read
+                    %tr
+                      %td 
+                        = Setting.meter_reads.act_smyc_read
+                        = @meter_read.act_smyc_read
+                      %td 
+                        = Setting.meter_reads.mst_smyc_read
+                        = @meter_read.mst_smyc_read
+                    %tr
+                      %td 
+                        = Setting.meter_reads.rcv_count
+                        = @meter_read.rcv_count
+                      %td 
+                        = Setting.meter_reads.wtr_count
+                        = @meter_read.wtr_count
+                    %tr
+                      %td 
+                        = Setting.meter_reads.smp_fc_count
+                        = @meter_read.smp_fc_count
+                      %td 
+                        = Setting.meter_reads.smp_count
+                        = @meter_read.smp_count
+            
+            
+            
+            
+            
+

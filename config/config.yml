@@ -121,7 +121,40 @@ defaults:
     poundage: 0.1
     commision: 0.1
     authc_pay: 1
+    default_num: 0
+    default_str: '' 
     host: www.cygangsta.com
+    status_en_yes: true
+    status_en_no: false
+    status_yes: 是
+    status_no: 否
+    status_public: '1'
+    status_private: '0'
+    default_str: ''
+    default_num: 0
+    default_boolean: true
+    index: index
+    new: new
+    show: show
+    delete: delete
+    edit: edit
+    btn_back: 返回
+    btn_next: 下一步
+    btn_edit: 编辑
+    btn_new: 添加
+    btn_show: 详情
+    btn_delete: 删除
+    btn_save: 保存
+    company_name: 徽卅科技
+    nav_item1: 首页
+    nav_item2: 招标公告
+    nav_item3: 中标公告
+    nav_item4: 证书备案
+    nav_item5: 资料系统
+    opening: 新用户
+    pending: 待审核
+    rejected: 不通过
+    passed: 通过
   trade_orders: &16
     number: 订单编号
     price: 价格
@@ -226,6 +259,27 @@ defaults:
     tag: 联系我们 
     title: 标题
     content: 正文
+  meter_reads: &31
+    label: 抄收绩效考核
+    std_sm_wm: 小表标准 (元/块)
+    std_big_wm: 大表标准 (元/块)
+    std_vst_wm: 上门催收或收费标准 (元/块)
+    act_sm_read: 小表实际抄表数(不含远传表和上门收费)
+    mst_sm_read: 小表应抄表数(不含远传表和上门收费)
+    act_big_read: 大表实际抄表数(不含远传表和上门收费)
+    mst_big_read: 大表应抄表数(不含远传表和上门收费)
+    act_vst_read: 上门收费实际抄表数
+    mst_vst_read: 上门收费应抄表数
+    act_smyc_read: 小表远传表实际抄表数(人工抄表)
+    mst_smyc_read: 小表远传表应抄表数(人工抄表)
+    act_bigyc_read: 大表远传表实际抄表数(人工抄表)
+    mst_bigyc_read: 大表远传表应抄表数(人工抄表)
+    rcv_count: 系统中已回收水量
+    wtr_count: 系统中总水量
+    smp_fc_count: 抽样复查抄表准确数量
+    smp_count: 抽样复查的总数量
+    name: 姓名
+    cal_date: 统计月份
 development:
   admins: *1
   users: *2
@@ -257,6 +311,7 @@ development:
   reports: *28
   activities: *29
   manages: *30
+  meter_reads: *31
 test:
   admins: *1
   users: *2
@@ -288,6 +343,7 @@ test:
   reports: *28
   activities: *29
   manages: *30
+  meter_reads: *31
 production:
   admins: *1
   users: *2
@@ -319,3 +375,4 @@ production:
   reports: *28
   activities: *29
   manages: *30
+  meter_reads: *31

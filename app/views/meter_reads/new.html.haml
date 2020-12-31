@@ -1,0 +1,14 @@
+- provide(:title, t('.title'))
+
+.container-fluid
+  .row
+    %main.col-md-12.p-3{:role => "main"}
+      .card.shadow.rounded-0
+        .card-header.bg-danger.text-white.rounded-0
+          %h5
+            = fa_icon "plus-square-o", text: t(controller_name + "." + action_name + '.title')
+            = link_to "/#{controller_name}", :class => "button button-border button-rounded button-caution pull-right  bg-white" do
+              = fa_icon " chevron-left", text: Setting.systems.btn_back, right: false 
+        .card-body
+          = render 'form'
+

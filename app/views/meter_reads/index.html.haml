@@ -1,0 +1,45 @@
+- provide(:title, t('.title'))
+
+.container-fluid
+  .row
+    %main.col-md-12.p-3{:role => "main"}
+      .card.shadow.rounded-0
+        .card-header.bg-primary.text-white.rounded-0
+          %h5
+            = fa_icon "list", text: t(controller_name + "." + action_name + '.title')
+            = link_to "/#{controller_name}/new", :class => "button button-border button-rounded button-primary pull-right bg-white" do
+              = fa_icon "plus", text: Setting.systems.btn_new, right: false 
+        .card-body
+          .container-fluid.p-0
+            .row
+              .col-md-12
+                %table#meter-read-table.text-center.table-bordered.table-sm.w-100
+                  %thead.thead-light
+                    %tr
+                      %th{:scope => "col"} #
+                    
+                      %th{:scope => "col"}
+                        = Setting.meter_reads.name
+                      %th{:scope => "col"}
+                        = Setting.meter_reads.cal_date
+                      %th{:scope => "col"}
+                  %tbody
+                    - @meter_reads.each_with_index do |meter_read, index|
+                      %tr
+                        %td{:scope => "row"}
+                          = index+1
+                      
+                        %td
+                          = meter_read.name
+                        %td
+                          = meter_read.cal_date
+                        %td
+                          .container-fluid
+                            .row
+                              = link_to meter_read_path(meter_read), :class => "text-info col" do
+                                = fa_icon "search"
+                              = link_to edit_meter_read_path(meter_read), :class => "text-success col" do
+                                = fa_icon "edit"
+                              = link_to meter_read, :method => :delete, :data => {:confirm => "确定删除吗?"}, :class => "text-danger col" do
+                                = fa_icon "trash"
+
