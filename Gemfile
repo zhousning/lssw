@@ -49,7 +49,7 @@ group :development, :test do
 end
 
 group :production do
-  #gem 'mysql2', '~> 0.3.13'
+  gem 'mysql2', '~> 0.3.13'
 end
 
 gem 'bootstrap', '~> 4.2.1'
