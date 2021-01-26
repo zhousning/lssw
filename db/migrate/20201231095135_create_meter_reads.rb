@@ -7,6 +7,10 @@ class CreateMeterReads < ActiveRecord::Migration
       t.float :std_big_wm,  null: false, default: Setting.systems.default_num 
     
       t.float :std_vst_wm,  null: false, default: Setting.systems.default_num 
+
+      t.float :std_sm_yc,  null: false, default: Setting.systems.default_num 
+    
+      t.float :std_big_yc,  null: false, default: Setting.systems.default_num 
     
       t.integer :act_sm_read,  null: false, default: Setting.systems.default_num 
     

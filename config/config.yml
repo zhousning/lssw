@@ -263,6 +263,8 @@ defaults:
     label: 抄收绩效考核
     std_sm_wm: 小表标准 (元/块)
     std_big_wm: 大表标准 (元/块)
+    std_sm_yc: 远传小表标准 (元/块)
+    std_big_yc: 远传大表标准 (元/块)
     std_vst_wm: 上门催收或收费标准 (元/块)
     act_sm_read: 小表实际抄表数(不含远传表和上门收费)
     mst_sm_read: 小表应抄表数(不含远传表和上门收费)

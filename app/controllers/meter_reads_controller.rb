@@ -18,14 +18,14 @@ class MeterReadsController < ApplicationController
    
 
   def calculate(meter_read)
-    total = meter_read.act_sm_read*meter_read.std_sm_wm + meter_read.act_big_read*meter_read.std_big_wm + meter_read.act_vst_read*meter_read.std_vst_wm + meter_read.act_smyc_read*meter_read.std_sm_wm + meter_read.act_bigyc_read*meter_read.std_big_wm
+    total = meter_read.act_sm_read*meter_read.std_sm_wm + meter_read.act_big_read*meter_read.std_big_wm + meter_read.act_vst_read*meter_read.std_vst_wm + meter_read.act_smyc_read*meter_read.std_sm_yc + meter_read.act_bigyc_read*meter_read.std_big_yc
 
     act_mt_count = meter_read.act_sm_read + meter_read.act_big_read + meter_read.act_smyc_read + meter_read.act_bigyc_read
     mst_mt_count = meter_read.mst_sm_read + meter_read.mst_big_read + meter_read.mst_smyc_read + meter_read.mst_bigyc_read
 
     cj_rate = mst_mt_count == 0 ? 0 : act_mt_count.to_f/mst_mt_count.to_f*100
-    acrt_rate = meter_read.smp_count == 0 ? 0 : meter_read.smp_fc_count/meter_read.smp_count*100
-    rcy_rate = meter_read.wtr_count == 0 ? 0 : meter_read.rcv_count/meter_read.wtr_count*100
+    acrt_rate = meter_read.smp_count == 0 ? 0 : meter_read.smp_fc_count.to_f/meter_read.smp_count.to_f*100
+    rcy_rate = meter_read.wtr_count == 0 ? 0 : meter_read.rcv_count.to_f/meter_read.wtr_count.to_f*100
 
     acrt_mny = 0
     if cj_rate >= 98 && acrt_rate >= 98
@@ -47,8 +47,8 @@ class MeterReadsController < ApplicationController
     else
       rcy_mny = -1250 + (80 - rcy_rate_round)*(-200)
     end
-    if rcy_mny > 2000
-      rcy_mny = 2000
+    if rcy_mny < -2000
+      rcy_mny = -2000
     end
 
     [total, act_mt_count, mst_mt_count, cj_rate, acrt_rate, rcy_rate, acrt_mny, rcy_mny]
