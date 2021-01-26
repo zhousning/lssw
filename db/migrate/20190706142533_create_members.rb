@@ -5,7 +5,7 @@ class CreateMembers < ActiveRecord::Migration
       t.string :email,              null: false, default: ""
       t.string :homepage,              null: false, default: ""
       t.string :title,              null: false, default: ""
-      t.text :intro,              null: false, default: ""
+      t.text :intro
       t.string :level,              null: false, default: ""
       t.string :photo,              null: false, default: ""
 
