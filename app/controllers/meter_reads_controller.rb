@@ -105,7 +105,7 @@ class MeterReadsController < ApplicationController
 
   private
     def meter_read_params
-      params.require(:meter_read).permit( :std_sm_wm, :std_big_wm, :std_vst_wm, :act_sm_read, :mst_sm_read, :act_big_read, :mst_big_read, :act_vst_read, :mst_vst_read, :act_smyc_read, :mst_smyc_read, :act_bigyc_read, :mst_bigyc_read, :rcv_count, :wtr_count, :name, :cal_date, :smp_fc_count, :smp_count)
+      params.require(:meter_read).permit( :std_sm_wm, :std_big_wm, :std_sm_yc, :std_big_yc, :std_vst_wm, :act_sm_read, :mst_sm_read, :act_big_read, :mst_big_read, :act_vst_read, :mst_vst_read, :act_smyc_read, :mst_smyc_read, :act_bigyc_read, :mst_bigyc_read, :rcv_count, :wtr_count, :name, :cal_date, :smp_fc_count, :smp_count)
     end
   
   
