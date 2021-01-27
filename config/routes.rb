@@ -52,7 +52,10 @@ Rails.application.routes.draw do
     get :status, :on => :collection
   end
 
-  resources :meter_reads
+  resources :meter_reads do
+    post :parse_excel, :on => :collection
+    get :meter_xls_download, :on => :collection 
+  end
 
   resources :roles
 

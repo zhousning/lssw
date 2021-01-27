@@ -6,8 +6,12 @@
       .card.shadow.rounded-0
         .card-header.bg-primary.text-white.rounded-0
           %h5
+            = link_to meter_xls_download_meter_reads_path, :class => "button button-border button-rounded button-royal pull-right bg-white" do
+              下载计件表模板
+            %button.button.button-caution.pull-right.mr-1{"data-target" => "#exampleModal", "data-toggle" => "modal", :type => "button"}
+              上传excel
             = fa_icon "list", text: t(controller_name + "." + action_name + '.title')
-            = link_to "/#{controller_name}/new", :class => "button button-border button-rounded button-primary pull-right bg-white" do
+            = link_to "/#{controller_name}/new", :class => "button button-border button-rounded button-primary pull-right bg-white mr-1" do
               = fa_icon "plus", text: Setting.systems.btn_new, right: false 
         .card-body
           .container-fluid.p-0
@@ -67,3 +71,23 @@
                               = link_to meter_read, :method => :delete, :data => {:confirm => "确定删除吗?"}, :class => "text-danger col" do
                                 = fa_icon "trash"
 
+#exampleModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "exampleModalLabel", :tabindex => "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %h5#exampleModalLabel.modal-title 计件表上传 
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} x 
+      .modal-body
+        = form_tag "/meter_reads/parse_excel", multipart: true do
+          .form-group.row
+            = label_tag "日期", nil, :class => "col-4 text-right col-form-label col-form-label"
+            .col-8
+              = text_field_tag "date", nil, :class => "form-control"
+          .form-group.row
+            = label_tag "计件表", nil, :class => "col-4 text-right col-form-label col-form-label"
+            .col-8
+              = file_field_tag "excel_file" 
+          .form-group.row
+            .col-8
+              = submit_tag '保存', :class => "btn btn-primary" 

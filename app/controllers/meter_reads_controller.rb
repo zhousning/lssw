@@ -1,8 +1,68 @@
+require 'excel_tool'
+require 'json'
+
 class MeterReadsController < ApplicationController
   layout "application_no_header"
   #before_filter :authenticate_user!
   #load_and_authorize_resource
-   
+  
+
+  def meter_xls_download
+    send_file File.join(Rails.root, "public", "templates", "计件表.xlsx"), :filename => "计件表.xlsx", :type => "application/force-download", :x_sendfile=>true
+  end
+  
+
+  def parse_excel
+    excel = params["excel_file"]
+    date = params["date"]
+    tool = ExcelTool.new
+    results = tool.parseExcel(excel.path)
+    results["抄表数量统计"][3..-1].each do |items|
+      params = Hash.new
+      params[:cal_date] = date
+      params[:std_big_wm ] = 10
+      params[:std_sm_wm ] = 2
+      params[:std_vst_wm ] = 3 
+      params[:std_big_yc ] = 5
+      params[:std_sm_yc ] = 1
+      items.each do |k, v|
+        if !(/A/ =~ k).nil?
+          params[:name] = v.nil? ? 0 : v 
+        elsif !(/B/ =~ k).nil?
+          params[:act_big_read] = v.nil? ? 0 : v 
+        elsif !(/C/ =~ k).nil?
+          params[:mst_big_read] = v.nil? ? 0 : v 
+        elsif !(/D/ =~ k).nil?
+          params[:act_sm_read] = v.nil? ? 0 : v 
+        elsif !(/E/ =~ k).nil?
+          params[:mst_sm_read] = v.nil? ? 0 : v 
+        elsif !(/F/ =~ k).nil?
+          params[:act_vst_read] = v.nil? ? 0 : v 
+        elsif !(/G/ =~ k).nil?
+          params[:mst_vst_read] = v.nil? ? 0 : v 
+        elsif !(/H/ =~ k).nil?
+          params[:act_bigyc_read] = v.nil? ? 0 : v 
+        elsif !(/I/ =~ k).nil?
+          params[:mst_bigyc_read] = v.nil? ? 0 : v 
+        elsif !(/J/ =~ k).nil?
+          params[:act_smyc_read] = v.nil? ? 0 : v 
+        elsif !(/K/ =~ k).nil?
+          params[:mst_smyc_read] = v.nil? ? 0 : v 
+        elsif !(/L/ =~ k).nil?
+          params[:smp_fc_count] = v.nil? ? 0 : v 
+        elsif !(/M/ =~ k).nil?
+          params[:smp_count] = v.nil? ? 0 : v 
+        elsif !(/O/ =~ k).nil?
+          params[:rcv_count] = v.nil? ? 0 : v 
+        elsif !(/P/ =~ k).nil?
+          params[:wtr_count] = v.nil? ? 0 : v 
+        end
+      end
+      MeterRead.create!(calculate_format(params))
+    end
+    redirect_to :action => :index
+  end 
+
   def index
     @meter_reads = MeterRead.all
   end
@@ -16,7 +76,7 @@ class MeterReadsController < ApplicationController
     
   end
    
-  def create
+  def create 
     @meter_read = MeterRead.new(calculate_format(meter_read_params))
     if @meter_read.save
       redirect_to @meter_read
@@ -85,6 +145,10 @@ class MeterReadsController < ApplicationController
       if rcy_mny < -2000
         rcy_mny = -2000
       end
+
+      cj_rate = format("%0.2f", cj_rate).to_f
+      acrt_rate = format("%0.2f", acrt_rate).to_f
+      rcy_rate = format("%0.2f", rcy_rate).to_f
 
       output_params[:total] = total
       output_params[:act_mt_count] = act_mt_count
