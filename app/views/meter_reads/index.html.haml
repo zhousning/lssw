@@ -23,6 +23,14 @@
                       %th{:scope => "col"}
                         = Setting.meter_reads.cal_date
                       %th{:scope => "col"}
+                        应抄/实抄
+                      %th{:scope => "col"}
+                        计件金额
+                      %th{:scope => "col"}
+                        抄见率 / 准确率 / 奖励
+                      %th{:scope => "col"}
+                        水量回收率 / 奖励
+                      %th{:scope => "col"}
                   %tbody
                     - @meter_reads.each_with_index do |meter_read, index|
                       %tr
@@ -33,6 +41,22 @@
                           = meter_read.name
                         %td
                           = meter_read.cal_date
+                        %td
+                          = meter_read.mst_mt_count
+                          = "/"
+                          = meter_read.act_mt_count
+                        %td
+                          = meter_read.total
+                        %td
+                          = meter_read.cj_rate
+                          = "/"
+                          = meter_read.acrt_rate
+                          = "/"
+                          = meter_read.acrt_mny
+                        %td
+                          = meter_read.rcy_rate
+                          = "/"
+                          = meter_read.rcy_mny
                         %td
                           .container-fluid
                             .row

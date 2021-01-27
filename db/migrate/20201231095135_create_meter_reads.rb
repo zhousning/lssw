@@ -44,8 +44,21 @@ class CreateMeterReads < ActiveRecord::Migration
     
       t.string :cal_date,  null: false, default: Setting.systems.default_str
     
+      t.float :total,  null: false, default: Setting.systems.default_num 
 
+      t.float :act_mt_count,  null: false, default: Setting.systems.default_num 
+
+      t.float :mst_mt_count,  null: false, default: Setting.systems.default_num 
     
+      t.float :cj_rate,  null: false, default: Setting.systems.default_num 
+
+      t.float :acrt_rate,  null: false, default: Setting.systems.default_num 
+
+      t.float :rcy_rate,  null: false, default: Setting.systems.default_num 
+
+      t.float :acrt_mny,  null: false, default: Setting.systems.default_num 
+
+      t.float :rcy_mny,  null: false, default: Setting.systems.default_num 
 
       t.timestamps null: false
     end

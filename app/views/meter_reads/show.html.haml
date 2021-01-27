@@ -20,24 +20,24 @@
               .col-md-6
                 %p
                   计件金额:
-                  = @result[0]
+                  = @meter_read.total
               .col-md-6
                 %p
                   抄见率:
-                  = @result[3]
+                  = @meter_read.cj_rate
                 %p
                   准确率:
-                  = @result[4]
+                  = @meter_read.acrt_rate
                 %p
                   奖励:
-                  = @result[6]
+                  = @meter_read.acrt_mny
               .col-md-6
                 %p
                   水量回收率:
-                  = @result[5]
+                  = @meter_read.rcy_rate
                 %p
                   奖励:
-                  = @result[7]
+                  = @meter_read.rcy_mny
             .row
               .col-md-12
                 %table#meter-read-table.table.text-right.table-bordered
