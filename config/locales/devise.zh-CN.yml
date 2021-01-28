@@ -62,6 +62,14 @@ zh-CN:
         other: "因为%{count}个错误导致帐号注册失败:"
 
   activerecord:
+    models:
+      notice: '公示公告'
+      lab: '公司概况'
+      member: '人员队伍'
+      result: '业务办理'
+      report: '新闻'
+      activity: '党建要闻'
+      manage: '地址'
     errors:
       models:
         post:
